@@ -17,8 +17,8 @@ interface MetadataProps {
 }
 
 export const generateMetadata = ({
-    title = `Vertra - AI-Powered Project Management & Team Collaboration`,
-    description = `Vertra is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
+    title = `Vetra - AI-Powered Project Management & Team Collaboration`,
+    description = `Vetra is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
     image = "/images/thumbnail.png",
     icons = [
         {
