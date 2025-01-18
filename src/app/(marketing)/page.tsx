@@ -1,4 +1,3 @@
-// import { Companies, CTA, Features, Hero, Perks, Pricing, Reviews, Wrapper, Benefits, FAQS, Services } from "@/components";
 import Wrapper from "@/components/global/wrapper";
 import Analysis from "@/components/marketing/analysis";
 import Companies from "@/components/marketing/companies";
@@ -20,16 +19,6 @@ const HomePage = () => {
             <Pricing />
             <LanguageSupport />
             <CTA />
-            {/* <Hero />
-            <Companies />
-            <Features />
-            <Services />
-            <Perks />
-            <Pricing />
-            <Reviews />
-            <Benefits />
-            <FAQS />
-            <CTA /> */}
         </Wrapper>
     )
 };

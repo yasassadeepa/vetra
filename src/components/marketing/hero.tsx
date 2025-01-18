@@ -1,18 +1,16 @@
-import React from 'react'
-import Icons from "../global/icons";
-import Container from "../global/container";
-import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
-import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import Container from "../global/container";
+import Icons from "../global/icons";
+import { Button } from "../ui/button";
 import { OrbitingCircles } from "../ui/orbiting-circles";
 
 const Hero = () => {
     return (
         <div className="relative flex flex-col items-center justify-center w-full py-20">
 
-            <div className="absolute flex sm:hidden size-60 rounded-full bg-blue-500 blur-[10rem] top-0 left-1/2 -translate-x-1/2 -z-10"></div>
+            <div className="absolute flex lg:hidden size-40 rounded-full bg-blue-500 blur-[10rem] top-0 left-1/2 -translate-x-1/2 -z-10"></div>
 
             <div className="flex flex-col items-center justify-center gap-y-8 relative">
                 <Container className="hidden lg:flex absolute inset-0 top-0 mb-auto flex-col items-center justify-center w-full min-h-screen -z-10">
@@ -73,7 +71,7 @@ const Hero = () => {
                     </Container>
                     <Container delay={0.25} className="z-20">
                         <div className="flex items-center justify-center mt-6 gap-x-4">
-                            <Link href="/auth/register" className="flex items-center gap-2 group">
+                            <Link href="#" className="flex items-center gap-2 group">
                                 <Button size="lg">
                                     Start Free Trial
                                     <ArrowRightIcon className="size-4 group-hover:translate-x-1 transition-all duration-300" />
@@ -83,14 +81,12 @@ const Hero = () => {
                     </Container>
                     <Container delay={0.3} className="relative">
                         <div className="relative rounded-xl lg:rounded-[32px] border border-border p-2 backdrop-blur-lg mt-10 max-w-6xl mx-auto">
-                            <Container delay={0.5}>
-                                <div className="absolute top-1/8 left-1/2 -z-10 bg-gradient-to-r from-sky-500 to-blue-600 w-3/4 -translate-x-1/2 h-1/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
-                                <div className="absolute -top-1/8 left-1/2 -z-20 bg-blue-600 w-1/4 -translate-x-1/2 h-1/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
-                            </Container>
+                            <div className="absolute top-1/8 left-1/2 -z-10 bg-gradient-to-r from-sky-500 to-blue-600 w-1/2 lg:w-3/4 -translate-x-1/2 h-1/4 -translate-y-1/2 inset-0 blur-[4rem] lg:blur-[10rem] animate-image-glow"></div>
+                            <div className="hidden lg:block absolute -top-1/8 left-1/2 -z-20 bg-blue-600 w-1/4 -translate-x-1/2 h-1/4 -translate-y-1/2 inset-0 blur-[10rem] animate-image-glow"></div>
 
                             <div className="rounded-lg lg:rounded-[22px] border border-border bg-background">
                                 <Image
-                                    src="/images/dashboard.avif"
+                                    src="/images/dashboard.png"
                                     alt="dashboard"
                                     width={1920}
                                     height={1080}

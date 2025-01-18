@@ -1,9 +1,9 @@
-import React from "react"
-import Wrapper from "../global/wrapper";
+import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
 import Icons from "../global/icons";
-import { NAV_LINKS } from "@/constants";
+import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
+import MobileMenu from "./mobile-menu";
 
 const Navbar = () => {
     return (
@@ -31,12 +31,13 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                        <Link href="/auth/signup">
+                    <div className="flex items-center gap-4">
+                        <Link href="#" className="hidden lg:block">
                             <Button variant="blue">
                                 Get Started
                             </Button>
                         </Link>
+                        <MobileMenu />
                     </div>
                 </div>
             </Wrapper>

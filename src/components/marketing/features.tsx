@@ -1,7 +1,8 @@
-import React from 'react'
-import Container from "../global/container";
 import { FEATURES } from "@/constants";
 import { cn } from "@/lib";
+import Image from "next/image";
+import Container from "../global/container";
+import { MagicCard } from "../ui/magic-card";
 
 const Features = () => {
     return (
@@ -17,18 +18,19 @@ const Features = () => {
                 </div>
             </Container>
 
-            <Container delay={0.1}>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 relative overflow-visible">
-                    <div className="absolute top-1/8 left-1/2 -translate-x-1/2 w-1/2 h-1/8 bg-gradient-to-b from-blue-500 to-purple-400 blur-[8rem] opacity-60 z-0"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 relative overflow-visible">
 
-                    {FEATURES.map((feature, index) => (
-                        <div
-                            key={feature.title}
-                            className={cn(
-                                "relative p-6 rounded-2xl bg-card border border-border/50 hover:border-border/100 transition-colors",
-                                index === 3 && "lg:col-span-2",
-                                index === 2 && "md:col-span-2 lg:col-span-1",
-                            )}
+                {FEATURES.map((feature, index) => (
+                    <Container key={feature.title} delay={0.1 + index * 0.1} className={cn(
+                        "relative flex flex-col rounded-2xl lg:rounded-3xl bg-card border border-border/50 hover:border-border/100 transition-colors",
+                        index === 3 && "lg:col-span-2",
+                        index === 2 && "md:col-span-2 lg:col-span-1",
+                    )}>
+                        <MagicCard
+                            gradientFrom="#38bdf8"
+                            gradientTo="#3b82f6"
+                            className="p-4 lg:p-6 lg:rounded-3xl"
+                            gradientColor="rgba(59,130,246,0.1)"
                         >
                             <div className="flex items-center space-x-4 mb-4">
                                 <h3 className="text-xl font-semibold flex items-center gap-2">
@@ -40,18 +42,19 @@ const Features = () => {
                                 {feature.description}
                             </p>
 
-                            {/* Feature Image */}
-                            <div className="mt-6 aspect-vide w-full rounded-lg bg-card/50 overflow-hidden">
-                                <img
+                            <div className="mt-6 w-full bg-card/50 overflow-hidden">
+                                <Image
                                     src={feature.image}
                                     alt={feature.title}
+                                    width={500}
+                                    height={500}
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </Container>
+                        </MagicCard>
+                    </Container>
+                ))}
+            </div>
         </div>
     )
 };

@@ -95,22 +95,6 @@ img {
   pointer-events: none;
 }
 
-.heading {
-  @apply bg-gradient-to-b from-foreground to-foreground/60 bg-clip-text text-transparent;
-}
-
-.subheading {
-  @apply text-2xl md:text-4xl lg:text-5xl font-semibold font-heading text-center mt-6 !leading-tight;
-}
-
-.paragraph {
-  @apply text-base md:text-lg text-center text-muted-foreground;
-}
-
-.gradient-text {
-  @apply text-transparent bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text;
-}
-
 .link {
   position: relative;
   transition: color 0.3s ease-in-out;
@@ -150,19 +134,11 @@ img {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 25px;
+  height: 20px;
   width: 70%;
   border-radius: 100%;
   filter: blur(6rem);
   background: rgb(85, 145, 243);
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
 }
 
 .footer::before {

@@ -3,7 +3,6 @@ import { Metadata } from "next";
 interface MetadataProps {
     title?: string;
     description?: string;
-    image?: string | null;
     icons?: Metadata["icons"];
     noIndex?: boolean;
     keywords?: string[];
@@ -19,7 +18,6 @@ interface MetadataProps {
 export const generateMetadata = ({
     title = `Vetra - AI-Powered Project Management & Team Collaboration`,
     description = `Vetra is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
-    image = "/images/thumbnail.png",
     icons = [
         {
             rel: "icon",
@@ -34,22 +32,21 @@ export const generateMetadata = ({
     ],
     noIndex = false,
     keywords = [
-        "AI project management",
-        "team collaboration software",
-        "workflow automation",
-        "productivity tools",
-        "project planning",
-        "task management",
-        "AI-powered collaboration",
-        "team communication",
-        "project tracking",
-        "remote team management"
+        "AI marketing automation",
+        "social media marketing",
+        "content generation",
+        "marketing analytics",
+        "campaign management",
+        "multilingual marketing",
+        "AI copywriting",
+        "marketing workflow",
+        "performance tracking",
+        "digital marketing tools"
     ],
     author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
     type = "website",
 }: MetadataProps = {}): Metadata => {
-    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://vertra.ai");
-    const imageUrl = image ? new URL(image, metadataBase).toString() : null;
+    const metadataBase = new URL(process.env.NEXT_PUBLIC_APP_URL || "https://vertra-ai.vercel.app");
 
     return {
         metadataBase,
@@ -68,21 +65,5 @@ export const generateMetadata = ({
             telephone: false,
         },
         icons,
-
-        // OpenGraph
-        openGraph: {
-            type,
-            siteName: process.env.NEXT_PUBLIC_APP_NAME,
-            title,
-            description,
-            ...(imageUrl && {
-                images: [{
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: title
-                }]
-            }),
-        },
     };
 };

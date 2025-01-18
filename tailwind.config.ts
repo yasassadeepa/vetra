@@ -130,6 +130,19 @@ export default {
 						transform: "translate(-50%, -50%) rotate(360deg) scale(1)",
 					},
 				},
+				"image-glow": {
+					"0%": {
+						"opacity": "0",
+						"animation-timing-function": "cubic-bezier(.74, .25, .76, 1)",
+					},
+					"10%": {
+						"opacity": "0.5",
+						"animation-timing-function": "cubic-bezier(.12, .01, .08, .99)",
+					},
+					"100%": {
+						"opacity": "1",
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -140,6 +153,7 @@ export default {
 				orbit: "orbit calc(var(--duration)*1s) linear infinite",
 				ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
 				blob: "blob 7s infinite",
+				"image-glow": "image-glow 6s ease-out 0.6s forwards",
 			},
 			spacing: {
 				"1/8": "12.5%",

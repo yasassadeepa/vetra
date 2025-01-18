@@ -1,14 +1,14 @@
 "use client";
 
-import { PLANS } from '@/constants';
-import { cn } from '@/lib';
-import { CheckIcon, CircleArrowUp, CreditCard, Gem, Headset, Zap } from 'lucide-react';
-import { useState } from 'react';
-import { Badge } from '../ui/badge';
-import { Button } from '../ui/button';
-import Container from "../global/container";
+import { PLANS } from "@/constants";
 import { PLAN } from "@/constants/plans";
-import NumberFlow from '@number-flow/react';
+import { cn } from "@/lib";
+import NumberFlow from "@number-flow/react";
+import { AnimatePresence, motion } from "framer-motion";
+import { CheckIcon } from "lucide-react";
+import { useState } from "react";
+import Container from "../global/container";
+import { Button } from "../ui/button";
 
 type Plan = "monthly" | "annually";
 
@@ -22,8 +22,6 @@ const Pricing = () => {
 
     return (
         <div className="relative flex flex-col items-center justify-center max-w-5xl py-20 mx-auto">
-
-            {/* <div className="hidden lg:block absolute -bottom-1/4 -right-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div> */}
 
             <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
                 <Container>
@@ -56,7 +54,7 @@ const Pricing = () => {
 
             <div className="grid w-full grid-cols-1 lg:grid-cols-2 pt-8 lg:pt-12 gap-4 lg:gap-6 max-w-4xl mx-auto">
                 {PLANS.map((plan, idx) => (
-                    <Container key={idx} delay={0.1 * idx + 0.1}>
+                    <Container key={idx} delay={0.1 * idx + 0.2}>
                         <Plan key={plan.id} plan={plan} billPlan={billPlan} />
                     </Container>
                 ))}
@@ -67,18 +65,15 @@ const Pricing = () => {
 
 const Plan = ({ plan, billPlan }: { plan: PLAN, billPlan: Plan }) => {
     return (
-        <div
-            className={cn(
-                "flex flex-col rounded-2xl lg:rounded-3xl transition-all bg-background items-start w-full border border-foreground/10",
-                // plan.title === "Mastermind" ? "border-blue-500/60 hover:border-blue-500" : "border-border/60 hover:border-muted-foreground/50"
+        <div className={cn(
+            "flex flex-col relative rounded-2xl lg:rounded-3xl transition-all bg-background/ items-start w-full border border-foreground/10 overflow-hidden",
+            plan.title === "Mastermind" && "border-blue-500"
+        )}>
+            {plan.title === "Mastermind" && (
+                <div className="absolute top-1/2 inset-x-0 mx-auto h-12 -rotate-45 w-full bg-blue-600 rounded-2xl lg:rounded-3xl blur-[8rem] -z-10"></div>
             )}
-        >
-            <div
-                className={cn(
-                    "p-4 md:p-8 flex rounded-t-2xl lg:rounded-t-3xl flex-col items-start w-full relative",
-                    // plan.title === "Mastermind" ? "bg-blue-500/10" : "bg-neutral-500/10"
-                )}
-            >
+
+            <div className="p-4 md:p-8 flex rounded-t-2xl lg:rounded-t-3xl flex-col items-start w-full relative">
                 <h2 className="font-medium text-xl text-foreground pt-5">
                     {plan.title}
                 </h2>
@@ -104,17 +99,28 @@ const Plan = ({ plan, billPlan }: { plan: PLAN, billPlan: Plan }) => {
                 <Button size="lg" variant={plan.title === "Mastermind" ? "blue" : "white"} className="w-full">
                     {plan.buttonText}
                 </Button>
-                <span className="text-sm text-center text-muted-foreground mt-3 mx-auto">
-                    {billPlan === "monthly" ? (
-                        "Billed monthly"
-                    ) : (
-                        "Billed in one annual payment"
-                    )}
-                </span>
+                <div className="h-8 overflow-hidden w-full mx-auto">
+                    <AnimatePresence mode="wait">
+                        <motion.span
+                            key={billPlan}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: -20, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="text-sm text-center text-muted-foreground mt-3 mx-auto block"
+                        >
+                            {billPlan === "monthly" ? (
+                                "Billed monthly"
+                            ) : (
+                                "Billed in one annual payment"
+                            )}
+                        </motion.span>
+                    </AnimatePresence>
+                </div>
             </div>
             <div className="flex flex-col items-start w-full p-5 mb-4 ml-1 gap-y-2">
                 <span className="text-base text-left mb-2">
-                    {plan.title === "Mastermind" ? "Including: " : "Standard plus: "}
+                    Includes: 
                 </span>
                 {plan.features.map((feature, index) => (
                     <div key={index} className="flex items-center justify-start gap-2">

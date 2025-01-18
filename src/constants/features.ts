@@ -29,12 +29,12 @@ export const FEATURES = [
         title: "Real-Time Analytics",
         description: "Track and analyze your marketing performance in real-time",
         icon: TrendingUpIcon,
-        image: "/images/feature-one.svg",
+        image: "/images/feature-four.svg",
     },
     {
         title: "Dynamic Optimization",
-        description: "Optimize your marketing strategy with AI-driven insights",
+        description: "AI-powered optimization for smarter marketing",
         icon: ZapIcon,
-        image: "/images/feature-one.svg",
+        image: "/images/feature-five.svg",
     }
 ]
