@@ -1,9 +1,5 @@
 export const NAV_LINKS = [
     {
-        name: "Pricing",
-        href: "#"
-    },
-    {
         name: "Features",
         href: "#"
     },
@@ -13,6 +9,6 @@ export const NAV_LINKS = [
     },
     {
         name: "Contact",
-        href: "#"
+        href: "https://t.me/mrrdtrader"
     },
 ];

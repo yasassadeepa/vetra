@@ -1,6 +1,5 @@
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
-import Icons from "../global/icons";
 import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import MobileMenu from "./mobile-menu";
@@ -12,9 +11,9 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-full">
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center gap-2">
-                            <Icons.icon className="w-6" />
+                            {/* <Icons.icon className="w-6" /> */}
                             <span className="text-xl font-semibold hidden lg:block">
-                                Vetra
+                                Mr RD
                             </span>
                         </Link>
                     </div>
@@ -32,7 +31,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <Link href="#" className="hidden lg:block">
+                        <Link href="https://t.me/rdgoldtrading" className="hidden lg:block">
                             <Button variant="blue">
                                 Get Started
                             </Button>

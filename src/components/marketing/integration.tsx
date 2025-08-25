@@ -70,13 +70,13 @@ const Integration = () => {
 
             <div className="flex flex-col items-center text-center max-w-3xl mx-auto lg:absolute lg:top-1/4 inset-x-0 mt-12 lg:mt-0">
                 <h2 className="text-2xl md:text-4xl lg:text-6xl font-heading font-semibold !leading-snug">
-                    Social Media Integration
+                    Mr RD Gold Trading
                 </h2>
             </div>
             <div className="flex flex-col items-center text-center max-w-3xl mx-auto lg:absolute lg:bottom-1/4 inset-x-0 z-20 mt-8 lg:mt-0">
-                <Link href="#">
+                <Link href="https://t.me/rdgoldtrading">
                     <Button size="lg">
-                        See all Integrations
+                        Join With Us
                         <ArrowRightIcon className="size-4" />
                     </Button>
                 </Link>
@@ -91,10 +91,16 @@ const Integration = () => {
                     </div>
 
                     <div className="absolute z-20 flex items-center justify-center group">
-                        <Images.logo className="size-24 group-hover:scale-110 transition-all duration-500" />
+                        <Image
+                            src="/icons/icon.png"
+                            alt="Custom Logo"
+                            width={120}
+                            height={120}
+                            className="size-30 group-hover:scale-150 transition-all duration-500"
+                        />
                     </div>
 
-                    {SOCIAL_PLATFORMS.map((platform, index) => (
+                    {/* {SOCIAL_PLATFORMS.map((platform, index) => (
                         <div
                             key={index}
                             className={cn(
@@ -111,7 +117,7 @@ const Integration = () => {
                                 )}
                             />
                         </div>
-                    ))}
+                    ))} */}
 
                 </div>
             </Container>

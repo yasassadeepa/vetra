@@ -2,38 +2,38 @@ import {
     ChartColumnBigIcon,
     DatabaseIcon,
     TrendingUpIcon,
-    WandSparklesIcon,
+    BookOpen,
     ZapIcon
 } from "lucide-react";
 
 export const FEATURES = [
     {
-        title: "Enhance User Experience",
-        description: "Efficiently manage user data and interactions with advanced AI tools",
-        icon: WandSparklesIcon,
+        title: "Free Education",
+        description: "Access a wealth of educational resources to enhance your trading skills.",
+        icon: BookOpen,
         image: "/images/feature-two.svg",
     },
     {
-        title: "Comprehensive Insights",
-        description: "Gain deep insights into your audience and campaign performance",
+        title: "Profitable Signals",
+        description: "Receive accurate trading signals to maximize your profits.",
         icon: ChartColumnBigIcon,
         image: "/images/feature-one.svg",
     },
     {
-        title: "Data Management",
-        description: "Manage your data with ease and efficiency",
+        title: "Easy to Manage",
+        description: "Effortlessly manage your trading activities with our intuitive platform.",
         icon: DatabaseIcon,
         image: "/images/feature-three.svg",
     },
     {
-        title: "Real-Time Analytics",
-        description: "Track and analyze your marketing performance in real-time",
+        title: "Empowering Your Trading Journey",
+        description: "Unlock your full potential with our expert guidance and resources.",
         icon: TrendingUpIcon,
         image: "/images/feature-four.svg",
     },
     {
-        title: "Dynamic Optimization",
-        description: "AI-powered optimization for smarter marketing",
+        title: "Quick Setup",
+        description: "Get started with our platform in minutes, not hours.",
         icon: ZapIcon,
         image: "/images/feature-five.svg",
     }

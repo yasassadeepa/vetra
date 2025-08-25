@@ -27,37 +27,25 @@ const Pricing = () => {
                 <Container>
                     <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
                         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-                            Find the right plan that suits <br className="hidden lg:block" /> <span className="font-subheading italic">your needs</span>
+                            Join with Us for <br className="hidden lg:block" /> <span className="font-subheading italic">GOLD Trading</span>
                         </h2>
-                        <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                            Transform your marketing with AI-powered automation. Create campaigns faster, generate better content, and make smarter decisions in minutes.
-                        </p>
-                    </div>
-                </Container>
-
-                <Container delay={0.2}>
-                    <div className="flex items-center justify-center space-x-4 mt-6">
-                        <span className="text-base font-medium">Monthly</span>
-                        <button onClick={handleSwitch} className="relative rounded-full focus:outline-none">
-                            <div className="w-12 h-6 transition rounded-full shadow-md outline-none bg-blue-500"></div>
-                            <div
-                                className={cn(
-                                    "absolute inline-flex items-center justify-center w-4 h-4 transition-all duration-500 ease-in-out top-1 left-1 rounded-full bg-white",
-                                    billPlan === "annually" ? "translate-x-6" : "translate-x-0"
-                                )}
-                            />
-                        </button>
-                        <span className="text-base font-medium">Annually</span>
                     </div>
                 </Container>
             </div>
 
-            <div className="grid w-full grid-cols-1 lg:grid-cols-2 pt-8 lg:pt-12 gap-4 lg:gap-6 max-w-4xl mx-auto">
-                {PLANS.map((plan, idx) => (
-                    <Container key={idx} delay={0.1 * idx + 0.2}>
-                        <Plan key={plan.id} plan={plan} billPlan={billPlan} />
-                    </Container>
-                ))}
+            <div className="w-full pt-8 lg:pt-12 max-w-4xl mx-auto">
+                <div className="flex items-center justify-center w-full mb-8 lg:mb-0">
+                    <div className="relative w-full max-w-2xl aspect-video">
+                        <iframe
+                            src="https://www.youtube.com/embed/sNSlsK18t9o"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                            title="YouTube video"
+                        ></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     );

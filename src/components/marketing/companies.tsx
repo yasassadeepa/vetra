@@ -7,20 +7,18 @@ const Companies = () => {
             <Container>
                 <div className="flex flex-col items-center justify-center">
                     <h4 className="text-2xl lg:text-4xl font-medium">
-                        Trusted by <span className="font-subheading italic">leading</span> brands
+                        We're Officially <span className="font-subheading italic">Partner</span> with
                     </h4>
                 </div>
             </Container>
 
             <Container delay={0.1}>
-                <div className="flex flex-row flex-wrap items-center justify-center gap-8 max-w-xl mx-auto pt-16 text-muted-foreground transition-all">
-                    <Images.company1 className="h-7 w-auto hover:text-foreground" />
-                    <Images.company2 className="h-7 w-auto hover:text-foreground" />
-                    <Images.company3 className="h-7 w-auto hover:text-foreground" />
-                    <Images.company6 className="h-7 w-auto hover:text-foreground" />
-                    <Images.company7 className="h-7 w-auto hover:text-foreground" />
-                    <Images.company9 className="h-7 w-auto hover:text-foreground" />
-                    <Images.company10 className="h-7 w-auto hover:text-foreground" />
+                <div className="flex items-center justify-center pt-16">
+                    <img
+                        src="/images/nordfxlogo.svg"
+                        alt="Company Logo"
+                        className="h-12 w-auto transition-all duration-300 grayscale brightness-0 invert hover:grayscale-0 hover:invert-0 hover:brightness-100 hover:saturate-150"
+                    />
                 </div>
             </Container>
         </div>
